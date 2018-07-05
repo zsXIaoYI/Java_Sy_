@@ -6,7 +6,6 @@ package cn.zsza.str;
  * @Company: NoNo
  */
 public class StringIntern {
-
     public static void main(String[] args) {
         /**
          * 生成了2个对象,常量池中的"1"和 JAVA Heap中的字符串对象
