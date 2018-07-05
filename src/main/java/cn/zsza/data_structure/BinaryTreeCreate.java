@@ -4,8 +4,6 @@ package cn.zsza.data_structure;
  * Created by ZhangSong on 2016/8/13.
  * 二叉树遍历
  */
-
-
 //当建立好二叉树类后可以创建二叉树实例，并实现二叉树的先根遍历，中根遍历，后根遍历，代码如下：
 public class BinaryTreeCreate {
 
