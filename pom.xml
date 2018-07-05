@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.zsza</groupId>
+  <artifactId>java_sy</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>java_sy</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <name>zxxx</name>
+
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.14</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.json-lib</groupId>
+      <artifactId>json-lib</artifactId>
+      <version>2.4</version>
+      <classifier>jdk15</classifier>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>24.0-jre</version>
+    </dependency>
+    <!--MySQL-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.38</version>
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+      </plugin>
+    </plugins>
+
+    <filters>
+      <filter>config/${environment}.properties</filter>
+    </filters>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <!--当为true时,app.properties有值-->
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+  <profiles>
+    <profile>
+      <id>test</id>
+      <properties>
+        <environment>test</environment>
+      </properties>
+      <activation><activeByDefault>true</activeByDefault></activation>
+    </profile>
+
+    <profile>
+      <id>product</id>
+      <properties>
+        <environment>product</environment>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>
