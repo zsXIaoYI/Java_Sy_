@@ -1,10 +1,10 @@
 package cn.zsza.data_structure.LRU;
 
 import java.util.HashMap;
-
 /**
  * Created by zs on 2017/7/26.
  * 15:19
+ * LRU：Least Recently Used
  * 基于HashMap实现的LRU算法
  */
 public class LRUCachel<K,V> {
