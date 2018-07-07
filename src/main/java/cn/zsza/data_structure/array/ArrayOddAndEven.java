@@ -1,0 +1,42 @@
+package cn.zsza.data_structure.array;
+
+import java.util.Arrays;
+/**
+ * Created by ZhangSong on 2017/9/29.
+ * 18:27
+ * 数组排序，数组前半部分是奇数，后半部分是偶数
+ */
+public class ArrayOddAndEven {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
+        reOrderOddAnaEven(arr);
+
+        Arrays.stream(arr).forEach(e ->
+                System.out.print(e +" "));
+
+    }
+    /**
+     * 思想：
+     *  设置start、end分别指向数组的起始位置和最后一个位置
+     *  然后按照条件进行--和++操作，不满足的情况下，两者交换
+     * @param arr
+     */
+    private static void reOrderOddAnaEven(int[] arr) {
+        if (arr == null || arr.length < 0){
+            throw new RuntimeException("invalid array");
+        }
+        int start = 0;
+        int end = arr.length - 1;
+        while (start < end){
+            while (start < end && arr[end] % 2 == 0)
+                end--;
+            while (start < end && arr[start] % 2 == 1)
+                start++;
+            if (start < end){
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+            }
+        }
+    }
+}
