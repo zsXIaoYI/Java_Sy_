@@ -1,7 +1,6 @@
 package cn.zsza.java8.func;
 
 import cn.zsza.java8.appleDemo.Apple;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
