@@ -1,4 +1,4 @@
-package cn.zsza.java8.jdbc;
+package cn.zsza.jdbc;
 
 import java.sql.*;
 
