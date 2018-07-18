@@ -112,13 +112,21 @@ public class StreamTest {
 	 *  reduce(0, (a, b) -> a + b);  返回Integer
 	 *  reduce(0, Integer::sum);  返回Integer
 	 *  reduce(Integer::sum); 返回Optional<Integer>
+	 *  计算过程：
+	 *   0 7 1 2 4
+	 *   a b       // a+b 赋值给a
+	 *     a b        b后移
 	 */
 	@Test
 	public void test6(){
 		List<Integer> list = Arrays.asList(7, 1, 2, 4);
-		Optional<Integer> re = list.stream()
-				  .reduce(Integer::sum);
-		System.out.println(re.get());
+//		Optional<Integer> re = list.stream()
+//				  .reduce(Integer::sum);
+//		System.out.println(re.get());
+
+		Integer result = list.stream()
+				.reduce(0, (a, b) -> a + b);
+		System.out.println(result);
 
 		System.out.println(Runtime.getRuntime().availableProcessors());
 
