@@ -1,10 +1,9 @@
 package cn.zsza.design_pattern.proxy.proxy2;
 
-import cn.zsza.designPattern.proxy.proxy1.PerformanceMonitor;
+import cn.zsza.design_pattern.proxy.proxy1.PerformanceMonitor;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
-
 import java.lang.reflect.Method;
 
 /**通过Cglib创建动态代理
@@ -20,7 +19,6 @@ public class CglibProxy implements MethodInterceptor {
         enhancer.setCallback(this);
         return enhancer.create();
     }
-
     /**
      *
      * @param obj
