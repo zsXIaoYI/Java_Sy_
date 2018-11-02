@@ -1,20 +1,34 @@
 package cn.zsza.java8.stream;
 
 import org.junit.Test;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import static java.util.stream.Collectors.toList;
+import static org.junit.Assert.*;
 /**
  * Created By ZhangSong
  * Time 2018/5/15 16:22
- * Company: Bank Of HS
+ *
  */
 public class StreamTest {
 
 	private static  List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5, 6);
+
+	/**
+	 * toList()
+	 */
+	@Test
+	public void stream(){
+		List<String> collected = Stream.of("a", "b", "c")
+				.collect(Collectors.toList());
+		assertEquals(Arrays.asList("a", "b", "c"), collected);
+
+	}
 	/**
 	 * map: 映射
+	 *  将一种类型的流转换成另一种类型的流
 	 * map可以多次连接
 	 */
 	@Test
@@ -129,6 +143,43 @@ public class StreamTest {
 		System.out.println(result);
 
 		System.out.println(Runtime.getRuntime().availableProcessors());
+	}
+	/**
+	 * collect
+	 */
+	@Test
+	public void test7(){
+		BiConsumer<List,List> cb = (l1, l2) ->{
+			l1.addAll(l2);
+		};
+		List<String> list1 =
+				Stream.of(1, 2, 3, 4, 5)
+						.collect(() -> new ArrayList<>(),
+								(l, i) -> l.add(i + "i"),
+								cb);
+		System.out.println(list1);
 
+		List<Person> people = new ArrayList<>();
+		people.add(new Person("xx",10));
+		people.add(new Person("cc",12));
+		people.add(new Person("yy",12));
+		List<Map<String,Object>> personToMap = people.stream()
+				.collect(ArrayList::new,(list,p) -> {
+					Map<String,Object> map = new HashMap<>();
+					map.put("name",p.name);
+					map.put("age",p.age);
+					list.add(map);
+				},List::addAll);
+		System.out.println(personToMap);
+		System.out.println(people);
+	}
+
+	static class Person{
+		public String name;
+		public int age;
+		Person(String name, int age){
+			this.name = name;
+			this.age = age;
+		}
 	}
 }
