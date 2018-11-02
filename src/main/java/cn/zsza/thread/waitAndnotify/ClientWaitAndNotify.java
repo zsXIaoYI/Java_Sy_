@@ -2,7 +2,6 @@ package cn.zsza.thread.waitAndnotify;
 
 import cn.zsza.thread.waitAndnotify.demo1.ThreadA;
 import cn.zsza.thread.waitAndnotify.demo1.ThreadB;
-
 /**
  * Created by ZhangSong on 2017/8/27.
  * 18:25
