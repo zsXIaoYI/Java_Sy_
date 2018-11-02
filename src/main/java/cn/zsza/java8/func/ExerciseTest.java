@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.*;
-
 /**
  * Created By ZhangSong
  * Time 2018/5/11 9:06
@@ -34,7 +33,11 @@ public class ExerciseTest {
 		 * (String s) -> s.length()
 		 * s -> s.length()
 		 */
-		List<Integer> list = map(Arrays.asList("java", "ca", "like"), s -> s.length());
+
+
+		Function<String,Integer> ff = s -> s.length();
+
+		List<Integer> list = map(Arrays.asList("java", "ca", "like"), ff);
 
 		System.out.println(list);
 
