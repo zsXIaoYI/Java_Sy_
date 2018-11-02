@@ -7,7 +7,6 @@ import cn.zsza.design_pattern.proxy.proxy1.PerformanceHandler;
 import cn.zsza.design_pattern.proxy.proxy2.CglibProxy;
 import org.junit.Test;
 import java.lang.reflect.Proxy;
-
 /**
  * Created by zs on 2017/5/16.
  * 18:44
