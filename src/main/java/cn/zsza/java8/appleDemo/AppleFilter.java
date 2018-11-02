@@ -65,6 +65,11 @@ public class AppleFilter {
 				return "red".equals(apple.getColor());
 			}
 		});
+		/**
+		 * Lambda写法
+		 */
+		filterApplesSelf(inventory, apple -> "red".equals(apple.getColor()));
+
 
 		/**
 		 * Predicate用法
@@ -90,6 +95,7 @@ public class AppleFilter {
 		});
 		return result;
 	}
+
 
 	public static List<Apple> filterApplesSelf(List<Apple> inventory, ApplePredicate p){
 		List<Apple> result = new ArrayList<>();
