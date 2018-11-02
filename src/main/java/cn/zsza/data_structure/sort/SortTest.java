@@ -1,10 +1,8 @@
 package cn.zsza.data_structure.sort;
 
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Created by zs on 2017/6/9.
  * 18:07
@@ -36,7 +34,6 @@ public class SortTest {
             System.out.println("】");
         }
     }
-
     /**
      * 选择排序
      * 首先拿数组中第一个元素和剩下的其他元素进行比较，
@@ -62,7 +59,6 @@ public class SortTest {
         }
         System.out.println(list);
     }
-
     @Test
     public void combineTwoArray(){
         /**
@@ -142,7 +138,7 @@ public class SortTest {
     public void insertSort(){
         int values[] = {2,5,4,1,3};
         int temp;
-        int j = 0;
+        int j;
         for (int i = 1; i < values.length; i++) {
             if(values[i]<values[i-1]){       //此处的判断很重要，这里体现了插入排序比冒泡排序和选择排序快的原因。
                 temp = values[i];
@@ -158,7 +154,7 @@ public class SortTest {
                 for (int k = 0; k < values.length; k++) {
                     System.out.print(values[k]+",");
                 }
-                System.out.println("");
+                System.out.println(" ");
             }
         }
     }
