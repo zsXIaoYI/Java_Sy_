@@ -18,6 +18,7 @@ public class StringTest {
     }
     @Test
     public void test3(){
+        System.out.println("abcdefgfedcgcda".length());
         System.out.println(StringUtils.longestPalindRome("abcdefgfedcgcda"));
     }
 

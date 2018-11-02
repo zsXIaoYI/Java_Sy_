@@ -33,7 +33,6 @@ public class StringArrange {
         arrayA[m] = arrayA[n];
         arrayA[n] = temp;
     }
-
     public static void main(String[] args){
         StringArrange test = new StringArrange();
         String A = "abc";
