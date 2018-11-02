@@ -1,5 +1,6 @@
 package cn.zsza.data_structure;
 
+
 /**
  * Created by ZhangSong on 2016/8/13.
  * 二叉树遍历
@@ -52,6 +53,8 @@ public class BinaryTreeCreate {
         System.out.println(".........search.........");
 
         System.out.println(root.search(root,135));
+
+
     }
 
     /**
@@ -70,7 +73,6 @@ public class BinaryTreeCreate {
             left = null;
             right = null;
         }
-
         /**
          * 12作为根节点
          *  76进来,比根节点12大,放到根节点的右子树上,放到右子树上之前,先判断根节点的右子树是否为空,如果为空,直接把
@@ -95,7 +97,6 @@ public class BinaryTreeCreate {
                 }
             }
         }
-
         public Node search(Node root,int data){
             if (root == null || root.data == data)
                 return root;
@@ -105,12 +106,13 @@ public class BinaryTreeCreate {
             if (data > root.data){
                 return search(root.right,data);
             }
-
             return null;
         }
 
+
         @Override
         public String toString() {
+
             return "Node{" +
                     "data=" + data +
                     '}';

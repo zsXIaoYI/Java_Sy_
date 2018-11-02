@@ -12,7 +12,7 @@ public class BinaryConvert {
     public void testTen_Two(){
         int num = 10;
         StringBuffer sb = new StringBuffer();
-        while(num>0){
+        while(num > 0){
             sb.append(num % 2);
             num = num/2;
         }
